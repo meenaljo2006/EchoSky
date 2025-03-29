@@ -6,6 +6,9 @@ import requests
 import random
 import webbrowser
 
+from dotenv import load_dotenv
+import os
+
 #Initialize main window
 root = Tk()
 root.title("Echo-Sky")
@@ -47,7 +50,7 @@ weather_genre_artist = {
     ],
     'Rainy': [
         'Mohit Chauhan', 'Ankit Tiwari', 'Arijit Singh', 'Kishore Kumar',
-        'Badshah', 'Sam Smith', 'John Mayer', 'Harry Styles',
+        'Badshah', 'Sam Smit.ENh', 'John Mayer', 'Harry Styles',
         'Kumar Sanu', 'Sonu Nigam', 'Diljit Dosanjh', 'Jass Manak',
         'Karan Aujla', 'Gurdaas Mann', 'Folk Bhangra', 'Vishal Mishra',
         'Bhuvan Bam', 'Raja Kumari', 'Nucleya', 'Naseeruddin Shah',
@@ -115,8 +118,11 @@ weather_genre_artist = {
 }
 
 #Spotify-Connection
-SPOTIFY_CLIENT_ID = 'cf02b432872847a9902355ab4322ad0b'
-SPOTIFY_CLIENT_SECRETS = 'c69b673a7dd242fc9fa07caee842ad1b'
+
+load_dotenv()
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRETS = os.getenv("SPOTIFY_CLIENT_SECRET")
 
 def normalize_weather_condition(weather):
     weather = weather.lower()
