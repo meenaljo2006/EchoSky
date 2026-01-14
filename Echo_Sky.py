@@ -164,7 +164,7 @@ def get_music_recommendations(weather):
 
 def get_spotify_token():
     client_id = os.getenv("SPOTIFY_CLIENT_ID") # Replace with your actual client ID
-    client_secret = os.getenv("SPOTIFY_CLIENT_SECRET") # Replace with your actual client secret
+    client_secret = os.getenv("SPOTIFY_CLIENT_SECRETS") # Replace with your actual client secret
     auth_url = 'https://accounts.spotify.com/api/token'
 
     auth_response = requests.post(auth_url, {
